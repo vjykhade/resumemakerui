@@ -24,6 +24,7 @@ function SkillSets() {
                         label=" Technology Name"
                         placeholder="Enter Your Technology Skills"
                         required
+                        name='technologies'
                     />
                 </Grid>
 
@@ -41,6 +42,7 @@ function SkillSets() {
                         label="Languages Name"
                         placeholder="Enter Your Languages"
                         required
+                        name='languages'
                     />
                 </Grid>
 
@@ -58,6 +60,7 @@ function SkillSets() {
                         label=" Tools Name"
                         placeholder="Enter Your Technology Tools"
                         required
+                        name='tools'
                     />
                 </Grid>
 
@@ -74,6 +77,7 @@ function SkillSets() {
                         label=" Database Name"
                         placeholder="Enter Your Database Used"
                         required
+                        name='databaseUsed'
                     />
                 </Grid>
 
@@ -90,6 +94,7 @@ function SkillSets() {
                         label=" Operating System"
                         placeholder="Operating System"
                         required
+                        name='operatingSystems'
                     />
                 </Grid>
 
@@ -106,6 +111,7 @@ function SkillSets() {
                         label=" IDE Used "
                         placeholder="Enter Your IDE Used"
                         required
+                        name='ideUsed'
                     />
                 </Grid>
 
@@ -122,6 +128,7 @@ function SkillSets() {
                         label=" Web Server"
                         placeholder="Enter Web Server"
                         required
+                        name='webServer'
                     />
                 </Grid>
 

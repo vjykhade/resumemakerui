@@ -16,8 +16,8 @@ export const getResumeAllData = (config) => {
      })
 }
 
-export const getResumeData = (config) => {
-    return axiosMethod.get('/thor/resume/getresume:id',config)
+export const getResumeData = (config, id) => {
+    return axiosMethod.get(`/thor/resume/getresume/${id}`,config)
     .then((response) => response.data)
     .catch(error => {
              console.log(error);

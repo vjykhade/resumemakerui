@@ -24,10 +24,9 @@ function Resume() {
     setGender(event.target.value);
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const getSumbitData = () => {
     const form = document.getElementById("myForm"); // replace 'myForm' with the ID of your form element
-    
+    //console.log("Form data", form.elements)
     const str = [];
     summaryList.forEach((ele) => {
       str.push(ele.val);
@@ -39,7 +38,7 @@ function Resume() {
         designation: form.elements.mainDesignation.value,
         mobileNo: form.elements.mobileNo.value,
         address: form.elements.address.value,
-        gender: form.elements.gender.value,
+        gender: gender,
         maritalStatus: married,
       },
       skillSet: {
@@ -61,27 +60,31 @@ function Resume() {
       },
       workExperience : [
         {
-          company: form.elements.company.value,
-          jobRole: form.elements.desigination.value,
-          periodFrom: form.elements.periodFrom.value,
-          periodTo: form.elements.periodTo.value,
-          projects : [
-            {
-              projectName: form.elements.projectName.value,
-              description: form.elements.description.value,
-              proTechnologies: form.elements.proTech.value,
-              responsibilities : [
-                form.elements.proResponsibilities.value
-              ]
-            }
+          // company: form.elements.company.value,
+          // jobRole: form.elements.desigination.value,
+          // periodFrom: form.elements.periodFrom.value,
+          // periodTo: form.elements.periodTo.value,
+          // projects : [
+          //   {
+          //     projectName: form.elements.projectName.value,
+          //     description: form.elements.description.value,
+          //     proTechnologies: form.elements.proTech.value,
+          //     responsibilities : [
+          //       form.elements.proResponsibilities.value
+          //     ]
+          //   }
 
-          ]  
+          // ]  
         }
       ]
     };
 
     const personalDetailsJSON = JSON.stringify(personalDetails);
-    //console.log("personalDetailsJSON", personalDetailsJSON)
+    console.log("personalDetailsJSON", personalDetailsJSON)
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    getSumbitData();
   }
 
 
@@ -95,9 +98,9 @@ function Resume() {
   };
 
   return (
+    <>
     <form id="myForm">
       <div className="container">
-        <form>
         <div className="main">
           <div >
           <h1>Resume</h1>
@@ -111,14 +114,15 @@ function Resume() {
                 id="outlined-required"
                 label="Name"
                 placeholder="Enter your Name"
-                name="fullName"
                 required
+                name="fullName"
               />
               <TextField
                 Email
                 id="outlined-required"
                 label="Email"
                 placeholder="Enter your email"
+                name="email"
                 required
               />
             </div>
@@ -129,6 +133,7 @@ function Resume() {
                 id="outlined-required"
                 label="Title"
                 placeholder="Enter your Designation"
+                name="mainDesignation"
                 required
               />
               <TextField
@@ -136,6 +141,7 @@ function Resume() {
                 id="outlined-required"
                 label="Enter Phone"
                 placeholder="Enter Your phone Number"
+                name="mobileNo"
                 required
               />
             </div>
@@ -145,6 +151,7 @@ function Resume() {
                 id="outlined-required"
                 label="Address"
                 placeholder="Enter your Address"
+                name="address"
                 required
               />
              
@@ -158,9 +165,9 @@ function Resume() {
                   onChange={handleChangeGender}
                   required
                 >
-                  <MenuItem value={10}>Male</MenuItem>
-                  <MenuItem value={20}>Female</MenuItem>
-                  <MenuItem value={30}>Other</MenuItem>
+                  <MenuItem value={"Male"}>Male</MenuItem>
+                  <MenuItem value={"Female"}>Female</MenuItem>
+                  <MenuItem value={"Other"}>Other</MenuItem>
                 </Select>
               </FormControl>
 
@@ -178,9 +185,9 @@ function Resume() {
                   onChange={handleChangeStatus}
                   required
                 >
-                  <MenuItem value={10}>Married</MenuItem>
-                  <MenuItem value={20}>Unmarried</MenuItem>
-                  <MenuItem value={30}>Divorce</MenuItem>
+                  <MenuItem value={"Married"}>Married</MenuItem>
+                  <MenuItem value={"Unmarried"}>Unmarried</MenuItem>
+                  <MenuItem value={"Divorce"}>Divorce</MenuItem>
                 </Select>
               </FormControl>
       
@@ -206,14 +213,13 @@ function Resume() {
           </div>
         
           <SkillSets />
-       
           <Education />
           <WorkExperience />
-          <Button style={{  width : "25%" ,padding: "10px", fontSize:"15px" ,fontWeight: "bolder",  left:"38%" , margin:"25px 0px 25px 0px"}}  variant="contained" onClick={handleSubmit} >Submit Data</Button>
+          <Button style={{  width : "25%" ,padding: "10px", fontSize:"15px" ,fontWeight: "bolder",  left:"38%" , margin:"25px 0px 25px 0px"}}  variant="contained" onClick={handleSubmit} type="submit">Submit Data</Button>
         </div>
-        </form>
       </div>
     </form>
+    </>
   )
 }
 export default Resume

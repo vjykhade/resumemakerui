@@ -5,8 +5,8 @@ import Projects from './Projects';
 import { border } from '@mui/system';
 
 export const WorkExperienceTemplate = () => {
-
-  
+    
+    
     return <>
     <div className='subContainer' style={{marginBottom: "20px"}}>
         <Grid container spacing={2} >

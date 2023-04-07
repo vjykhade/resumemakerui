@@ -1,9 +1,26 @@
 import { Grid, TextField } from '@mui/material'
-import React from 'react'
 import Responsibility from './Responsibility';
+import React, { useState } from 'react'
 
 
-export const ProjectTemplate = () => {
+export const ProjectTemplate = (props) => {
+    const [childData, setChildData] = useState({
+        projectName: "",
+        proTech: "",
+        description: "",
+       
+      });
+
+      function handleChildDataChange(event) {
+        const name = event.target.name
+        const value = event.target.value
+        setChildData(prevData => ({
+            ...prevData,
+            [name]: value
+        }))
+        //props.setData(childData);
+        props.addChildData(childData);
+      }
 
     return <>
         <Grid container spacing={2}  className='subprojectcls' >
@@ -21,6 +38,8 @@ export const ProjectTemplate = () => {
                     placeholder="Enter Your Project Name"
                     required
                     name='projectName'
+                    value={childData.projectName} 
+                    onChange={handleChildDataChange}
                 />
             </Grid>
             <Grid item xs={4} >
@@ -32,6 +51,8 @@ export const ProjectTemplate = () => {
                     placeholder="Enter your Project Technology"
                     required
                     name='proTech'
+                    value={childData.proTech} 
+                    onChange={handleChildDataChange}
                 />
             </Grid>
             <Grid item xs={4} style={{ display: 'flex' }} >
@@ -47,6 +68,8 @@ export const ProjectTemplate = () => {
                     placeholder="Enter your project description"
                     required
                     name='description'
+                    value={childData.description} 
+                    onChange={handleChildDataChange}
                 />
             </Grid>
 

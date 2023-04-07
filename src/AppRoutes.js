@@ -5,6 +5,8 @@ import Login from "./component/Login"
 import Resume from "./component/Resume/Resume"
 import SignUp from "./component/SignUp"
 import { useState } from "react"
+import ResumeById from "./component/Resume/ResumeById"
+import ParentComponent from "./component/Resume/exampleJS"
 
 const AppRoutes = (props) => {
 
@@ -15,8 +17,10 @@ const AppRoutes = (props) => {
     }
     const testRoutes = [
         { path: '/', element: <Login loginStatus={loginStatus} handleLogin={handleLogin}/> },
-        { path: '/login', element: <Login /> },
+        // { path: '/login', element: <Login /> },
+        { path: '/resumebyid/:id', element: <ResumeById /> },
         { path: '/dashboard', element: <Dashboard /> },
+        { path: '/example', element: <ParentComponent /> },
         { path: '/feedback', element: <Feedback /> },
         { path: '/signup', element: <SignUp /> },
         { path: '/resume', element: <Resume /> }

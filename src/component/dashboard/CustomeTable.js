@@ -85,8 +85,8 @@ useEffect(() =>  {
               </StyledTableCell>
               <StyledTableCell >{row.personalDetails.email}</StyledTableCell>
               <StyledTableCell >{row.personalDetails.designation}</StyledTableCell>
-              <StyledTableCell ><Link>{row.id}</Link></StyledTableCell>
-              <StyledTableCell ><Link><PreviewRoundedIcon /></Link></StyledTableCell>
+              <StyledTableCell ><Link to={`/resumebyid/${row.id}`} style={{textDecoration: "none"}}>{row.id}</Link></StyledTableCell>
+              <StyledTableCell ><Link to={`/resumebyid/${row.id}`}><PreviewRoundedIcon /></Link></StyledTableCell>
               <StyledTableCell ><Link><DeleteRoundedIcon/></Link></StyledTableCell>
             </StyledTableRow>
           ))}

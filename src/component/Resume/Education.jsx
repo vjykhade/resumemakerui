@@ -22,6 +22,7 @@ function Education() {
                         label="Higher Qualification"
                         placeholder="Enter Your Higher Qualification"
                         required
+                        name='degree'
                     />
                 </Grid>
             </Grid>
@@ -38,6 +39,7 @@ function Education() {
                         label="University"
                         placeholder="Enter Your University"
                         required
+                        name='university'
                     />
                 </Grid>
 
@@ -55,6 +57,7 @@ function Education() {
                         label="Passing Year"
                         placeholder="Enter Your Passing Year"
                         required
+                        name='passingYear'
                     />
 
                 </Grid>
